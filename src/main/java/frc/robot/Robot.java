@@ -5,8 +5,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.Climber_Subsystem;
+import frc.robot.subsystems.Drive_Subsystem;
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -16,6 +21,13 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+  public static Climber_Subsystem climber;
+  public static Drive_Subsystem drive;
+  public static IntakeSubsystem intake;
+  public static ShooterSubsystem shooter;
+    
+  Command autonomousCommand;
+  SendableChooser<Command> chooser=new SendableChooser<>();
 
   private RobotContainer m_robotContainer;
 
